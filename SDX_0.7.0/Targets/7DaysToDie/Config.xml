@@ -1,0 +1,58 @@
+﻿<configs>
+  
+  <config>
+    <name>7 Days To Die</name>
+    <version>1.0</version>
+    <author>Domonix</author>
+    <website>http://sdxmod.com/</website>
+  
+    <settings>
+      <setting name="GameDir" label="Game Directory" type="Dir" />
+    </settings>
+
+    <menu>
+      <item label="Delete backup" action="DeleteBackup" confirm="True" />
+      <item label="Restore backup" action="RestoreBackup" confirm="True" />
+    </menu>
+  
+    <patches>      
+      <class name="GameManager">
+        <method name="Awake">
+          <hook type="SDX.Payload.Entry" method="Setup" pos="end" />
+        </method>
+        <method name="StartGame">
+          <hook type="SDX.Payload.ModEngine" method="StartupModScripts" pos="start" />
+        </method>
+      </class>
+    </patches>
+  </config>
+
+
+  <config>
+    <name>7 Days To Die Server</name>  
+    <version>1.0</version>
+    <author>Domonix,Mortelentus</author>
+    <website>http://sdxmod.com/</website>
+    
+    <settings>
+      <setting name="GameDir" label="Game Directory" type="Dir" />
+    </settings>
+
+    <menu>
+      <item label="Delete backup" action="DeleteBackup" confirm="True" />
+      <item label="Restore backup" action="RestoreBackup" confirm="True" />
+    </menu>
+  
+    <patches>      
+      <class name="GameManager">
+        <method name="Awake">
+          <hook type="SDX.Payload.Entry" method="Setup" pos="130" />
+        </method>
+        <method name="StartGame">
+          <hook type="SDX.Payload.ModEngine" method="StartupModScripts" pos="start" />
+        </method>	      			
+      </class>
+    </patches>
+  </config>
+
+</configs>
